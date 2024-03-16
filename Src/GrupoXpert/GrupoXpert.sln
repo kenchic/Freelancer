@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoExpert.Components", "GrupoExpert.Components\GrupoExpert.Components.csproj", "{683BB285-C864-4B66-9194-7B6FD48E946B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Maui", "GrupoXpert.Maui\GrupoXpert.Maui.csproj", "{A896AD7A-04AE-409F-B92B-A81C82B3976D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Web", "GrupoXpert.Web\GrupoXpert.Web.csproj", "{B78243EA-2917-47FE-A40A-ECA42040AB81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.API", "GrupoXpert.API\GrupoXpert.API.csproj", "{90EB3AFB-03B0-4CF0-86AE-390545BB4CB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.API", "GrupoXpert.API\GrupoXpert.API.csproj", "{90EB3AFB-03B0-4CF0-86AE-390545BB4CB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.Client", "GrupoXpert.Client\GrupoXpert.Client.csproj", "{A4D29D39-57CE-400B-9BE8-2DF47B2D7415}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Client", "GrupoXpert.Client\GrupoXpert.Client.csproj", "{A4D29D39-57CE-400B-9BE8-2DF47B2D7415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.Core", "GrupoXpert.Core\GrupoXpert.Core.csproj", "{C7132ED5-85AD-411E-A069-9F1AF0DC13A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.Tools", "GrupoXpert.Tools\GrupoXpert.Tools.csproj", "{4DD63538-FA79-4DF8-AC06-17BC086C7FE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.Components", "GrupoXpert.Components\GrupoXpert.Components.csproj", "{3B8CBE0D-CE6D-4AE9-A457-5737122EDBDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{683BB285-C864-4B66-9194-7B6FD48E946B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{683BB285-C864-4B66-9194-7B6FD48E946B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{683BB285-C864-4B66-9194-7B6FD48E946B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{683BB285-C864-4B66-9194-7B6FD48E946B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A896AD7A-04AE-409F-B92B-A81C82B3976D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A896AD7A-04AE-409F-B92B-A81C82B3976D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A896AD7A-04AE-409F-B92B-A81C82B3976D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -41,6 +41,18 @@ Global
 		{A4D29D39-57CE-400B-9BE8-2DF47B2D7415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D29D39-57CE-400B-9BE8-2DF47B2D7415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D29D39-57CE-400B-9BE8-2DF47B2D7415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7132ED5-85AD-411E-A069-9F1AF0DC13A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7132ED5-85AD-411E-A069-9F1AF0DC13A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7132ED5-85AD-411E-A069-9F1AF0DC13A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7132ED5-85AD-411E-A069-9F1AF0DC13A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD63538-FA79-4DF8-AC06-17BC086C7FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD63538-FA79-4DF8-AC06-17BC086C7FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD63538-FA79-4DF8-AC06-17BC086C7FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD63538-FA79-4DF8-AC06-17BC086C7FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8CBE0D-CE6D-4AE9-A457-5737122EDBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8CBE0D-CE6D-4AE9-A457-5737122EDBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8CBE0D-CE6D-4AE9-A457-5737122EDBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8CBE0D-CE6D-4AE9-A457-5737122EDBDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

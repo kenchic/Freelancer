@@ -1,0 +1,26 @@
+﻿<div class="login-container">
+	<form action="" class="form-login">
+		<ul class="login-nav">
+			<li class="login-nav__item active">
+				<a href="#">Ingresar</a>
+			</li>
+			<li class="login-nav__item">
+				<a href="#">Registrar</a>
+			</li>
+		</ul>
+		<label for="login-input-user" class="login__label">
+			Usuario
+		</label>
+		<input id="login-input-user" class="login__input" type="text" @bind-value="user" />
+		<label for="login-input-password" class="login__label">
+			Clave
+		</label>
+		<input id="login-input-password" class="login__input" type="password" @bind-value="pass" />
+		<label for="login-sign-up" class="login__label--checkbox">
+			<input id="login-sign-up" type="checkbox" class="login__input--checkbox" />
+			Keep me Signed in
+		</label>
+		<button class="login__submit" onclick="@OnClickHandler">Ingresar</button>
+	</form>
+	<a href="#" class="login__forgot">Olvido Contraseña?</a>
+</div>
