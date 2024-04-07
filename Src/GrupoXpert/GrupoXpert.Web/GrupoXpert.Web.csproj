@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GrupoXpert.Components\GrupoXpert.Components.csproj" />
+    <Folder Include="Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GrupoXpert.Client\GrupoXpert.Client.csproj" />
+    <ProjectReference Include="..\GrupoXpert.Components\GrupoXpert.Blazor.csproj" />
   </ItemGroup>
 
 </Project>

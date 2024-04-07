@@ -46,6 +46,10 @@
     <ItemGroup>
         <!-- App Icon -->
         <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+        <MauiSplashScreen Include="Resources\Splash\splashscreen.svg">
+          <Color>#512BD4</Color>
+          <BaseSize>128,128</BaseSize>
+        </MauiSplashScreen>
 
         <!-- Splash Screen -->
         <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -62,6 +66,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Resources\Splash\splashScreen.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.3" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
@@ -69,7 +78,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GrupoXpert.Components\GrupoXpert.Components.csproj" />
+      <ProjectReference Include="..\GrupoXpert.Client\GrupoXpert.Client.csproj" />
+      <ProjectReference Include="..\GrupoXpert.Components\GrupoXpert.Blazor.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Components\" />
     </ItemGroup>
 
 </Project>

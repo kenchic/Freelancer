@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.API", "GrupoXper
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Client", "GrupoXpert.Client\GrupoXpert.Client.csproj", "{A4D29D39-57CE-400B-9BE8-2DF47B2D7415}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.Core", "GrupoXpert.Core\GrupoXpert.Core.csproj", "{C7132ED5-85AD-411E-A069-9F1AF0DC13A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Core", "GrupoXpert.Core\GrupoXpert.Core.csproj", "{C7132ED5-85AD-411E-A069-9F1AF0DC13A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.Tools", "GrupoXpert.Tools\GrupoXpert.Tools.csproj", "{4DD63538-FA79-4DF8-AC06-17BC086C7FE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Tools", "GrupoXpert.Tools\GrupoXpert.Tools.csproj", "{4DD63538-FA79-4DF8-AC06-17BC086C7FE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoXpert.Components", "GrupoXpert.Components\GrupoXpert.Components.csproj", "{3B8CBE0D-CE6D-4AE9-A457-5737122EDBDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Blazor", "GrupoXpert.Components\GrupoXpert.Blazor.csproj", "{3B8CBE0D-CE6D-4AE9-A457-5737122EDBDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

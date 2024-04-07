@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using GrupoXpert.Maui.Authentication;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.Extensions.Logging;
+using MudBlazor.Services;
 
 namespace GrupoXpert.Maui
 {
@@ -15,11 +18,15 @@ namespace GrupoXpert.Maui
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddMudServices();
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddAuthorizationCore();
+            builder.Services.AddScoped<CustomAuthenticationStateProvider>();
+            builder.Services.AddScoped<AuthenticationStateProvider>(s => s.GetRequiredService<CustomAuthenticationStateProvider>());
 
             return builder.Build();
         }
