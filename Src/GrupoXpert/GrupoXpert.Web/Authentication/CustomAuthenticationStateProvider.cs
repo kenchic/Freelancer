@@ -1,7 +1,9 @@
 ﻿using GrupoXpert.Client.Models;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+using Newtonsoft.Json.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 
 namespace GrupoXpert.Authentication
 {
@@ -20,16 +22,16 @@ namespace GrupoXpert.Authentication
         {
             try
             {
-                var respuesta = await _localStorage.GetAsync<Credencial>("Intetity");
-                var identity = respuesta.Success ? respuesta.Value : null;
+                var result = await _localStorage.GetAsync<string>("Intetity");
+                var identity = result.Success ? result.Value : null;
                 if (identity == null)
                     return await Task.FromResult(new AuthenticationState(_anonymous));
 
                 var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, identity.Usuario)
+                    new Claim(ClaimTypes.Name, identity)
                 }, "CustomAuth"));
-                return await Task.FromResult(new AuthenticationState(claimsPrincipal));                
+                return await Task.FromResult(new AuthenticationState(claimsPrincipal));
             }
             catch (Exception)
             {
@@ -37,25 +39,27 @@ namespace GrupoXpert.Authentication
             }
         }
 
-        public async Task UpdateAuthenticationState(Credencial credencial)
+        public async Task UpdateAuthenticationState(string indentity, string token)
         {
             ClaimsPrincipal claimsPrincipal;
 
-            if (credencial != null)
+            if (indentity != null && token != null)
             {
-                await _localStorage.SetAsync("Intetity", credencial);
+                await _localStorage.SetAsync("Intetity", indentity);
+                await _localStorage.SetAsync("Token", token);
 
                 claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, credencial.Usuario)
+                    new Claim(ClaimTypes.Name, indentity)
                 }));
             }
             else
             {
                 await _localStorage.DeleteAsync("Intetity");
+                await _localStorage.DeleteAsync("Token");
                 claimsPrincipal = _anonymous;
             }
-            
+
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(claimsPrincipal)));
         }
     }

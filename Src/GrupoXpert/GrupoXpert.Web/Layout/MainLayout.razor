@@ -60,14 +60,19 @@
 
     private async Task OnAutenticar(AutenticarEventArgs e)
     {
-        if ((e.Usuario.ToUpper() == "ADMIN") && e.Clave == "123")
+        AuthorizationRequest authRequest = new AuthorizationRequest()
+            {
+                UserName = e.Usuario,
+                Password = e.Clave
+            };
+        AuthorizationResponse auth = new GrupoXpert.Client.AuthenticationService().Login(authRequest);
+        if (auth != null)
         {
-            Credencial credencial = new Credencial(e.Usuario, e.Clave);
-            await ((CustomAuthenticationStateProvider)AuthenticationStateProvider!).UpdateAuthenticationState(credencial);
+            await ((CustomAuthenticationStateProvider)AuthenticationStateProvider!).UpdateAuthenticationState(authRequest.UserName, auth.Token);
             NavManager.NavigateTo("/", true);
         }
     }
-    
+
     private void ToggleDrawer()
     {
         abrirMenu = !abrirMenu;
@@ -75,6 +80,6 @@
 
     private async Task OnLogout()
     {
-        await ((CustomAuthenticationStateProvider)AuthenticationStateProvider!).UpdateAuthenticationState(null);
+        await ((CustomAuthenticationStateProvider)AuthenticationStateProvider!).UpdateAuthenticationState(null, null);
     }
 }

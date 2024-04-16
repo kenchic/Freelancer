@@ -10,10 +10,10 @@ namespace GrupoXpert.Api.Services
     public class AuthorizationService : IAuthorizationService
     {
 
-        private readonly CoinControlDbContext _context;
+        private readonly GrupoXpertDbContext _context;
         private readonly IConfiguration _configuration;
 
-        public AuthorizationService(CoinControlDbContext context, IConfiguration configuration)
+        public AuthorizationService(GrupoXpertDbContext context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;

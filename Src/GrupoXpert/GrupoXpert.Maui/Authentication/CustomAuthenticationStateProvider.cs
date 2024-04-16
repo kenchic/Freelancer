@@ -9,17 +9,17 @@ namespace GrupoXpert.Maui.Authentication
         {
         }
 
-        public async Task Login(string token, string usuario)
+        public async Task Login(string user, string token)
         {
             await SecureStorage.SetAsync("token", token);
-            await SecureStorage.SetAsync("usuario", usuario);
+            await SecureStorage.SetAsync("user", user);
             NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
         }
 
         public async Task Logout()
         {
             SecureStorage.Remove("token");
-            SecureStorage.Remove("usuario");
+            SecureStorage.Remove("user");
             NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
         }
 
@@ -28,10 +28,10 @@ namespace GrupoXpert.Maui.Authentication
             try
             {
                 var token = await SecureStorage.GetAsync("token");
-                var usuario = await SecureStorage.GetAsync("usuario");
-                if (usuario != null)
+                var user = await SecureStorage.GetAsync("user");
+                if (user != null)
                 {
-                    var claims = new[] { new Claim(ClaimTypes.Name, usuario) };
+                    var claims = new[] { new Claim(ClaimTypes.Name, user) };
                     var identity = new ClaimsIdentity(claims, "Custom authentication");
                     return new AuthenticationState(new ClaimsPrincipal(identity));
                 }
