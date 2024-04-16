@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Maui", "GrupoXpe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Web", "GrupoXpert.Web\GrupoXpert.Web.csproj", "{B78243EA-2917-47FE-A40A-ECA42040AB81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.API", "GrupoXpert.API\GrupoXpert.API.csproj", "{90EB3AFB-03B0-4CF0-86AE-390545BB4CB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Api", "GrupoXpert.API\GrupoXpert.Api.csproj", "{90EB3AFB-03B0-4CF0-86AE-390545BB4CB0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrupoXpert.Client", "GrupoXpert.Client\GrupoXpert.Client.csproj", "{A4D29D39-57CE-400B-9BE8-2DF47B2D7415}"
 EndProject
